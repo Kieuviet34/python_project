@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="/" method="post">
+    CHATBOT DEMO<br>
+    <textarea name="chat_content" id="chat_content" style="width:300px;height:150px">{{livechatcontent}}</textarea>
+    <br>
+    <input type="text" id="user-msg", name="user_msg"><br>
+    <button id="btn-send">Send</button>
+</form>
+    <!-- <script>
+        function addToTextarea($ta, text){
+            var val = $ta.val();
+            if(val){
+                $ta.val(val + '\n' + text);
+            } else {
+                $ta.val(text);
+            } 
+            $ta.scrollTop($ta[0].scrollHeight);
+        }
+
+        $('#btn-send').click(sendchat);
+
+        $('#user-msg').keypress(function(event){
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode === 13){
+                sendchat();
+            }
+        });
+
+        function sendchat(){
+            var user_msg = $("#user-msg").val();
+            $("#user-msg").val('');
+
+            addToTextarea($("#chat_content"), "[YOU]: " + user_msg);
+
+            // Send message to Rasa server
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:5005/webhooks/rest/webhook',
+                contentType: 'application/json',
+                data: JSON.stringify({"sender": "test", "message": user_msg}),
+                success: function(data){
+                    addToTextarea($("#chat_content"), "[BOT]: " + data[0].text);
+                },
+                error: function(xhr, status, error){
+                    console.error('Error sending message to Rasa:', error);
+                }
+            });
+        }
+    </script> -->
+</body>
+</html>
