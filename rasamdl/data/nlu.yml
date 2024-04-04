@@ -1,91 +1,80 @@
 version: "3.1"
+language: vi
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+  # Greetings
+  - intent: greet
+    examples: |
+      - chào
+      - xin chào
+      - hey
+      - hello
+      - lô con cặc
+      - mẹ mày bel
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+  # Goodbyes
+  - intent: goodbye
+    examples: |
+      - tạm biệt
+      - hẹn gặp lại
+      - chào nhé
+      - bye
+      - xscut
+      - không tiễn
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+  # Affirmations
+  - intent: affirm
+    examples: |
+      - vâng
+      - đồng ý
+      - chắc chắn rồi
+      - đúng vậy
+      - juan
+      - không sai
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+  # Denials
+  - intent: deny
+    examples: |
+      - không
+      - không được
+      - tôi không nghĩ thế
+      - không thích điều đó
+      - không đời nào
+      - đéo bạn ơi
+      - không nhé babi
+      - Đéo
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+  # User Mood
+  - intent: mood_great
+    examples: |
+      - tuyệt vời
+      - tuyệt vời quá
+      - cảm thấy tuyệt vời
+      - tôi cảm thấy rất tốt
+      - Ambatokum
+      - Bắn rồi
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+  - intent: mood_unhappy
+    examples: |
+      - tồi tệ
+      - tôi buồn
+      - tôi không cảm thấy khỏe
+      - tôi thất vọng
+      - qua buon
+      - het cuu
+      - chịu chết 
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+  # Bot Challenge
+  - intent: bot_challenge
+    examples: |
+      - bạn có phải là bot không?
+      - bạn có phải là người không?
+      - tôi có đang nói chuyện với bot không?
+      - tôi có đang nói chuyện với người không?
+
+  - intent: product_inquiry
+    examples: |
+      - Điện thoại [Samsung Galaxy A23]{"entity":"product_model"} có [giá]{"entity":"product_detail"} bao nhiêu?
+      - [RAM]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"} là bao nhiêu?
+      - Tôi muốn biết [màu sắc]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"}
+      - [Thời lượng pin]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"}

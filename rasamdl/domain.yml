@@ -8,27 +8,53 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - product_inquiry
 
+entities:
+  - product_model
+  - product_detail
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+    entity: product_model
+  details:
+    type: list
+    mappings:
+    - type: from_entity
+    entity: product_detail
+forms:
+  product_form:
+    required_slots:
+        - name
+        - details
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Chào bạn! Có gì tôi có thể giúp bạn không?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "Đừng buồn! Hãy thử xem đây:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
-
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Rất vui vì bạn đang vui!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Hẹn gặp lại bạn!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "shut da fuck up u stupid bitch."
+
+  utter_what_can_i_do:
+  - text: "Bạn muốn tôi làm gì cho bạn?"
+
+  utter_sorry:
+  - text: "Xin lỗi, tôi không hiểu. Bạn có thể diễn đạt lại không?"
+
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+

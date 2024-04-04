@@ -2,29 +2,42 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  # Happy Path - User greets and feels good
+  - story: happy_path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  # Sad Path 1 - User greets, feels bad, but appreciates cheering up
+  - story: sad_path_1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - intent: affirm
+      - action: utter_happy
+      - intent: mood_unhappy
+      - action: utter_sorry
+  # Sad Path 2 - User greets, feels bad, and doesn't need cheering up
+  - story: sad_path_2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - intent: deny
+      - action: utter_goodbye
+  - story: active form
+    steps:
+      - intent: product_inquiry
+      - action: product_form
+      - active_loop: product_form
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  # User asks if you are a bot
+  - story: bot_challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot

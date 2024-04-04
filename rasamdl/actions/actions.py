@@ -37,16 +37,16 @@ class ActionProvideProductDetails(Action):
             description = product_data.get('description', 'No description available')
             detail = product_data.get('detail', {})
             
-            respone = f'Here are the details of product:\nTitle: {title}\nPrice:  {price}\nDescription: {description}\nProduct Details:'
+            respone = f'Đây là thông tin của sản phẩm:\nTên máy: {title}\nGiá:  {price}\nMô tả: {description}\nThông tin sản phẩm:'
             for k,v in detail.item():
                 respone += f'\n -{k}: {v}'
             dispatcher.utter_message(respone)
             
             return []
         except FileNotFoundError:
-            dispatcher.utter_message("Sorry, I cant find any product information, please try again later")
+            dispatcher.utter_message("Xin lỗi tôi không thể tìm thông tin sản phẩm, vui lòng thử lại sau")
         except json.JSONDecodeError:
-            dispatcher.utter_message("There was an issue processing product information. Please contact support")
+            dispatcher.utter_message("Đã xảy ra lỗi trong khâu xử lý thông tin sản phẩm, vui lòng liên hệ hỗ trợ")
     def load_product_data(self)->Dict[Text,any]:
         with open('\\data_scaping\\phone.json', 'r') as f:
             product_data = json.load(f)

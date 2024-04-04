@@ -1,0 +1,322 @@
+[
+  {
+    "text": "chào",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.27922573685646057
+    }
+  },
+  {
+    "text": "xin chào",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.30774950981140137
+    }
+  },
+  {
+    "text": "lô con cặc",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.230927512049675
+    }
+  },
+  {
+    "text": "mẹ mày bel",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.4718061685562134
+    }
+  },
+  {
+    "text": "tạm biệt",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.3447059988975525
+    }
+  },
+  {
+    "text": "hẹn gặp lại",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.2858964204788208
+    }
+  },
+  {
+    "text": "chào nhé",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3311517536640167
+    }
+  },
+  {
+    "text": "xscut",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3504113554954529
+    }
+  },
+  {
+    "text": "không tiễn",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5305545926094055
+    }
+  },
+  {
+    "text": "vâng",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.47683244943618774
+    }
+  },
+  {
+    "text": "đồng ý",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5651641488075256
+    }
+  },
+  {
+    "text": "chắc chắn rồi",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.24128541350364685
+    }
+  },
+  {
+    "text": "đúng vậy",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.45023465156555176
+    }
+  },
+  {
+    "text": "tuyệt vời",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3881894648075104
+    }
+  },
+  {
+    "text": "juan",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.38522738218307495
+    }
+  },
+  {
+    "text": "không sai",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.36702167987823486
+    }
+  },
+  {
+    "text": "không",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5976831912994385
+    }
+  },
+  {
+    "text": "không được",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6256160736083984
+    }
+  },
+  {
+    "text": "tôi không nghĩ thế",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3328361511230469
+    }
+  },
+  {
+    "text": "không thích điều đó",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.3741830289363861
+    }
+  },
+  {
+    "text": "không đời nào",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6087065935134888
+    }
+  },
+  {
+    "text": "đéo bạn ơi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.3469454050064087
+    }
+  },
+  {
+    "text": "không nhé babi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.3318105638027191
+    }
+  },
+  {
+    "text": "Đéo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.36942118406295776
+    }
+  },
+  {
+    "text": "tuyệt vời",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3881894648075104
+    }
+  },
+  {
+    "text": "tuyệt vời quá",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.412035197019577
+    }
+  },
+  {
+    "text": "cảm thấy tuyệt vời",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.4127641022205353
+    }
+  },
+  {
+    "text": "tôi cảm thấy rất tốt",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.27344146370887756
+    }
+  },
+  {
+    "text": "Bắn rồi",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.3257425129413605
+    }
+  },
+  {
+    "text": "tồi tệ",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.28008726239204407
+    }
+  },
+  {
+    "text": "tôi buồn",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.3456377387046814
+    }
+  },
+  {
+    "text": "tôi không cảm thấy khỏe",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.37376868724823
+    }
+  },
+  {
+    "text": "tôi thất vọng",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.2596246302127838
+    }
+  },
+  {
+    "text": "qua buon",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.41466423869132996
+    }
+  },
+  {
+    "text": "het cuu",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5090070366859436
+    }
+  },
+  {
+    "text": "bạn có phải là người không?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.3802322447299957
+    }
+  },
+  {
+    "text": "Điện thoại Samsung Galaxy A23 có giá bao nhiêu?",
+    "intent": "product_inquiry",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5037015676498413
+    }
+  },
+  {
+    "text": "RAM của Samsung Galaxy A23 là bao nhiêu?",
+    "intent": "product_inquiry",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.53321772813797
+    }
+  },
+  {
+    "text": "Tôi muốn biết màu sắc của Samsung Galaxy A23",
+    "intent": "product_inquiry",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5855398178100586
+    }
+  },
+  {
+    "text": "Thời lượng pin của Samsung Galaxy A23",
+    "intent": "product_inquiry",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5646060705184937
+    }
+  }
+]
