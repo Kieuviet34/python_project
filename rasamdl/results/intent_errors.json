@@ -4,31 +4,31 @@
     "intent": "greet",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.27922573685646057
+      "confidence": 0.6115458011627197
     }
   },
   {
     "text": "xin chào",
     "intent": "greet",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.30774950981140137
+      "name": "bot_challenge",
+      "confidence": 0.458316832780838
     }
   },
   {
     "text": "lô con cặc",
     "intent": "greet",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.230927512049675
+      "name": "goodbye",
+      "confidence": 0.3651154637336731
     }
   },
   {
     "text": "mẹ mày bel",
     "intent": "greet",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.4718061685562134
+      "name": "bot_challenge",
+      "confidence": 0.4449884593486786
     }
   },
   {
@@ -36,79 +36,71 @@
     "intent": "goodbye",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.3447059988975525
+      "confidence": 0.5547968745231628
     }
   },
   {
     "text": "hẹn gặp lại",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.2858964204788208
+      "name": "greet",
+      "confidence": 0.38749074935913086
     }
   },
   {
     "text": "chào nhé",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.3311517536640167
+      "name": "bot_challenge",
+      "confidence": 0.48015812039375305
     }
   },
   {
     "text": "xscut",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.3504113554954529
+      "name": "bot_challenge",
+      "confidence": 0.6743338108062744
     }
   },
   {
     "text": "không tiễn",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.5305545926094055
+      "name": "bot_challenge",
+      "confidence": 0.432871550321579
     }
   },
   {
     "text": "vâng",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.47683244943618774
+      "name": "bot_challenge",
+      "confidence": 0.6006601452827454
     }
   },
   {
     "text": "đồng ý",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.5651641488075256
+      "name": "bot_challenge",
+      "confidence": 0.5425024628639221
     }
   },
   {
     "text": "chắc chắn rồi",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "bot_challenge",
-      "confidence": 0.24128541350364685
+      "name": "goodbye",
+      "confidence": 0.37403497099876404
     }
   },
   {
     "text": "đúng vậy",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.45023465156555176
-    }
-  },
-  {
-    "text": "tuyệt vời",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.3881894648075104
+      "name": "bot_challenge",
+      "confidence": 0.5718154311180115
     }
   },
   {
@@ -116,31 +108,31 @@
     "intent": "affirm",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.38522738218307495
+      "confidence": 0.7449087500572205
     }
   },
   {
     "text": "không sai",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.36702167987823486
+      "name": "bot_challenge",
+      "confidence": 0.5451073050498962
     }
   },
   {
     "text": "không",
     "intent": "deny",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.5976831912994385
+      "name": "bot_challenge",
+      "confidence": 0.5625499486923218
     }
   },
   {
     "text": "không được",
     "intent": "deny",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.6256160736083984
+      "name": "bot_challenge",
+      "confidence": 0.5007526278495789
     }
   },
   {
@@ -148,23 +140,23 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "greet",
-      "confidence": 0.3328361511230469
+      "confidence": 0.41132816672325134
     }
   },
   {
     "text": "không thích điều đó",
     "intent": "deny",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.3741830289363861
+      "name": "greet",
+      "confidence": 0.3564746379852295
     }
   },
   {
     "text": "không đời nào",
     "intent": "deny",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.6087065935134888
+      "name": "bot_challenge",
+      "confidence": 0.37182286381721497
     }
   },
   {
@@ -172,55 +164,63 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.3469454050064087
+      "confidence": 0.4154878258705139
     }
   },
   {
     "text": "không nhé babi",
     "intent": "deny",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.3318105638027191
+      "name": "bot_challenge",
+      "confidence": 0.388026624917984
     }
   },
   {
     "text": "Đéo",
     "intent": "deny",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.36942118406295776
+      "name": "bot_challenge",
+      "confidence": 0.6233938336372375
     }
   },
   {
     "text": "tuyệt vời",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.3881894648075104
+      "name": "bot_challenge",
+      "confidence": 0.5695526003837585
     }
   },
   {
     "text": "tuyệt vời quá",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.412035197019577
+      "name": "bot_challenge",
+      "confidence": 0.5239965319633484
     }
   },
   {
     "text": "cảm thấy tuyệt vời",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.4127641022205353
+      "name": "bot_challenge",
+      "confidence": 0.4348958730697632
     }
   },
   {
     "text": "tôi cảm thấy rất tốt",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.27344146370887756
+      "name": "bot_challenge",
+      "confidence": 0.32937824726104736
+    }
+  },
+  {
+    "text": "Ambatokum",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7195690870285034
     }
   },
   {
@@ -228,7 +228,7 @@
     "intent": "mood_great",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.3257425129413605
+      "confidence": 0.4556571841239929
     }
   },
   {
@@ -236,7 +236,7 @@
     "intent": "mood_unhappy",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.28008726239204407
+      "confidence": 0.5001103281974792
     }
   },
   {
@@ -244,23 +244,23 @@
     "intent": "mood_unhappy",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.3456377387046814
+      "confidence": 0.5043234825134277
     }
   },
   {
     "text": "tôi không cảm thấy khỏe",
     "intent": "mood_unhappy",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.37376868724823
+      "name": "greet",
+      "confidence": 0.37659379839897156
     }
   },
   {
     "text": "tôi thất vọng",
     "intent": "mood_unhappy",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.2596246302127838
+      "name": "greet",
+      "confidence": 0.40432411432266235
     }
   },
   {
@@ -268,7 +268,7 @@
     "intent": "mood_unhappy",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.41466423869132996
+      "confidence": 0.6461073160171509
     }
   },
   {
@@ -276,15 +276,31 @@
     "intent": "mood_unhappy",
     "intent_prediction": {
       "name": "greet",
-      "confidence": 0.5090070366859436
+      "confidence": 0.47439301013946533
+    }
+  },
+  {
+    "text": "chịu chết",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5085186958312988
     }
   },
   {
     "text": "bạn có phải là người không?",
     "intent": "bot_challenge",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.3802322447299957
+      "name": "goodbye",
+      "confidence": 0.43180176615715027
+    }
+  },
+  {
+    "text": "tôi có đang nói chuyện với người không?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.41159486770629883
     }
   },
   {
@@ -292,7 +308,7 @@
     "intent": "product_inquiry",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.5037015676498413
+      "confidence": 0.4070475697517395
     }
   },
   {
@@ -300,7 +316,7 @@
     "intent": "product_inquiry",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.53321772813797
+      "confidence": 0.6228618621826172
     }
   },
   {
@@ -308,15 +324,15 @@
     "intent": "product_inquiry",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.5855398178100586
+      "confidence": 0.5894891023635864
     }
   },
   {
     "text": "Thời lượng pin của Samsung Galaxy A23",
     "intent": "product_inquiry",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.5646060705184937
+      "name": "bot_challenge",
+      "confidence": 0.47260019183158875
     }
   }
 ]

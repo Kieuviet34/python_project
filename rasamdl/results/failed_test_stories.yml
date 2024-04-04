@@ -7,7 +7,7 @@ stories:
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
-  - intent: affirm  # predicted: goodbye: yes
+  - intent: affirm  # predicted: bot_challenge: yes
   - action: utter_happy
 - story: sad path 3 (.\tests\test_stories.yml)
   steps:
@@ -16,5 +16,5 @@ stories:
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
-  - intent: deny  # predicted: goodbye: no
+  - intent: deny  # predicted: nlu_fallback: no
   - action: utter_goodbye

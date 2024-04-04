@@ -11,25 +11,25 @@ intents:
   - product_inquiry
 
 entities:
-  - product_model
-  - product_detail
+- product_model
+- product_detail
 
 slots:
-  name:
+  product_name:
     type: text
-    mappings:
+    mappings: 
     - type: from_entity
-    entity: product_model
-  details:
+      entity: product_model
+  pro_details: 
     type: list
     mappings:
     - type: from_entity
-    entity: product_detail
+      entity: product_detail
 forms:
   product_form:
-    required_slots:
-        - name
-        - details
+      required_slots:
+        - product_name
+        - pro_details
 responses:
   utter_greet:
   - text: "Chào bạn! Có gì tôi có thể giúp bạn không?"
@@ -52,7 +52,6 @@ responses:
 
   utter_sorry:
   - text: "Xin lỗi, tôi không hiểu. Bạn có thể diễn đạt lại không?"
-
 
 session_config:
   session_expiration_time: 60
