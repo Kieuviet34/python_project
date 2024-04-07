@@ -41,7 +41,7 @@
             // Send message to Rasa server
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost:5005/webhooks/rest/webhook',
+                url: 'http://localhost:5005/webhooks/rasa/webhook',
                 contentType: 'application/json',
                 data: JSON.stringify({"sender": "test", "message": user_msg}),
                 success: function(data){

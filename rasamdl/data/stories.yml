@@ -55,25 +55,25 @@ stories:
     - intent: goodbye
     - action: utter_goodbye
 
-- story: interactive_story_1
-  steps:
-  - intent: inform
-  - intent: greet
-  - action: utter_greet
-  - intent: bot_challenge
-  - action: utter_what_can_i_do
-  - action: action_default_fallback
-  - intent: buy_a_phone
-    entities:
-    - product_model: giá 200
-  - slot_was_set:
-    - product_name: giá 200
-  - action: product_form
-  - action: utter_product_info
-  - intent: inform
-    entities:
-    - product_detail: y
-  - intent: bot_challenge
-    entities:
-    - product_detail: y
-  - action: utter_iamabot
+  - story: interactive_story_1
+    steps:
+    - intent: inform
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_challenge
+    - action: utter_what_can_i_do
+    - action: action_default_fallback
+    - intent: buy_a_phone
+      entities:
+      - product_model: giá 200
+    - slot_was_set:
+      - product_name: giá 200
+    - action: product_form
+    - action: utter_product_info
+    - intent: inform
+      entities:
+      - product_detail: y
+    - intent: bot_challenge
+      entities:
+      - product_detail: y
+      - action: utter_iamabot
