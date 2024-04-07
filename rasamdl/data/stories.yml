@@ -35,7 +35,11 @@ stories:
       - intent: product_inquiry
       - action: product_form
       - active_loop: product_form
-
+      - slot_was_set: 
+        - requested_slot: product_name
+      - slot_was_set:
+        - requested_slot: pro_details
+      - action: utter_product_info
   # User asks if you are a bot
   - story: bot_challenge
     steps:

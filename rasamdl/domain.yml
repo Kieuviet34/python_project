@@ -52,7 +52,8 @@ responses:
 
   utter_sorry:
   - text: "Xin lỗi, tôi không hiểu. Bạn có thể diễn đạt lại không?"
-
+  utter_product_info:
+  - text: "Dưới đây là thông tin về {pro_details} của điện thoại {product_name}"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

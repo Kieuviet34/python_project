@@ -26,23 +26,52 @@ class ActionHelloWorld(Action):
 
         return []
 class ActionProvideProductDetails(Action):
-    def name(self)->Text:
+    def name(self) -> Text:
         return "action_provide_product_details"
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, any])-> List[Dict[Text, any]]:
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, any]) -> List[Dict[Text, any]]:
         try:
+            # 1. Extract product name from user question (assuming Rasa NLU processing)
+            product_name = tracker.get_slot("product_name")
+
+            # 2. Search for product data in JSON file
             product_data = self.load_product_data()
-            #get information about product
-            title = product_data.get('title', "Unknown")
-            price = product_data.get('price', "Unknown")
-            description = product_data.get('description', 'No description available')
-            detail = product_data.get('detail', {})
-            
-            respone = f'Đây là thông tin của sản phẩm:\nTên máy: {title}\nGiá:  {price}\nMô tả: {description}\nThông tin sản phẩm:'
-            for k,v in detail.item():
-                respone += f'\n -{k}: {v}'
-            dispatcher.utter_message(respone)
-            
+            matched_product = None
+            for data in product_data:
+                if product_name == data.get("title"):
+                    matched_product = data
+                    break
+
+            # 3. Check if product found
+            if matched_product:
+                title = matched_product.get("title", "Unknown")
+                price = matched_product.get("price", "Unknown")
+                description = matched_product.get("description", "No description available")
+
+                # 4. Optionally filter or prioritize details
+                relevant_details = {
+                    # Select specific details based on user intent or preferences
+                    "RAM": matched_product.get("product_details", {}).get("RAM"),
+                    "Battery Power Rating": matched_product.get("product_details", {}).get("Batteries"),
+                    "Screen size": matched_product.get("product_details",{}).get("Standing screen display size"),
+                    "Memory capacity": matched_product.get("product_details",{}).get("Memory Storage Capacity"),
+                    "OS" : matched_product.get("product_details",{}).get("OS")
+                }
+
+                response = f'Đây là thông tin của sản phẩm {title}:\n'
+                response += f'Giá: {price}\n'
+                response += f'Mô tả: {description}\n'
+                if relevant_details:
+                    response += 'Thông tin chi tiết:\n'
+                    for k, v in relevant_details.items():
+                        response += f'- {k}: {v}\n'
+
+                dispatcher.utter_message(response)
+            else:
+                dispatcher.utter_message("Xin lỗi, tôi không tìm thấy thông tin về sản phẩm '{}'".format(product_name))
+
             return []
+
         except FileNotFoundError:
             dispatcher.utter_message("Xin lỗi tôi không thể tìm thông tin sản phẩm, vui lòng thử lại sau")
         except json.JSONDecodeError:

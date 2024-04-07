@@ -1,5 +1,5 @@
 version: "3.1"
-#language: vi
+language: vi
 
 nlu:
   # Greetings
@@ -78,3 +78,5 @@ nlu:
       - [RAM]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"} là bao nhiêu?
       - Tôi muốn biết [màu sắc]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"}
       - [Thời lượng pin]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"}
+      - Tôi muốn chọn sản phẩm có hệ điều hành là [android]{"entity": "product_detail"}
+      - [Chi phí]{"entity":"product_detail"} cho phiên bản [128GB]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity": "product_model"}: là bao nhiêu?
