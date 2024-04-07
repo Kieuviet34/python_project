@@ -1,82 +1,76 @@
 version: "3.1"
-language: vi
-
 nlu:
-  # Greetings
-  - intent: greet
-    examples: |
-      - chào
-      - xin chào
-      - hey
-      - hello
-      - lô con cặc
-      - mẹ mày bel
-
-  # Goodbyes
-  - intent: goodbye
-    examples: |
-      - tạm biệt
-      - hẹn gặp lại
-      - chào nhé
-      - bye
-      - xscut
-      - không tiễn
-
-  # Affirmations
-  - intent: affirm
-    examples: |
-      - vâng
-      - đồng ý
-      - chắc chắn rồi
-      - đúng vậy
-      - juan
-      - không sai
-
-  # Denials
-  - intent: deny
-    examples: |
-      - không
-      - không được
-      - tôi không nghĩ thế
-      - không thích điều đó
-      - không đời nào
-      - đéo bạn ơi
-      - không nhé babi
-      - Đéo
-
-  # User Mood
-  - intent: mood_great
-    examples: |
-      - tuyệt vời
-      - tuyệt vời quá
-      - cảm thấy tuyệt vời
-      - tôi cảm thấy rất tốt
-      - Ambatokum
-      - Bắn rồi
-
-  - intent: mood_unhappy
-    examples: |
-      - tồi tệ
-      - tôi buồn
-      - tôi không cảm thấy khỏe
-      - tôi thất vọng
-      - qua buon
-      - het cuu
-      - chịu chết 
-
-  # Bot Challenge
-  - intent: bot_challenge
-    examples: |
-      - bạn có phải là bot không?
-      - bạn có phải là người không?
-      - tôi có đang nói chuyện với bot không?
-      - tôi có đang nói chuyện với người không?
-
-  - intent: product_inquiry
-    examples: |
-      - Điện thoại [Samsung Galaxy A23]{"entity":"product_model"} có [giá]{"entity":"product_detail"} bao nhiêu?
-      - [RAM]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"} là bao nhiêu?
-      - Tôi muốn biết [màu sắc]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"}
-      - [Thời lượng pin]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity":"product_model"}
-      - Tôi muốn chọn sản phẩm có hệ điều hành là [android]{"entity": "product_detail"}
-      - [Chi phí]{"entity":"product_detail"} cho phiên bản [128GB]{"entity":"product_detail"} của [Samsung Galaxy A23]{"entity": "product_model"}: là bao nhiêu?
+- intent: greet
+  examples: |
+    - chào
+    - xin chào
+    - hey
+    - hello
+    - lô con cặc
+    - mẹ mày bel
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - hẹn gặp lại
+    - chào nhé
+    - bye
+    - xscut
+    - không tiễn
+- intent: affirm
+  examples: |
+    - vâng
+    - đồng ý
+    - chắc chắn rồi
+    - đúng vậy
+    - juan
+    - không sai
+- intent: deny
+  examples: |
+    - không
+    - không được
+    - tôi không nghĩ thế
+    - không thích điều đó
+    - không đời nào
+    - đéo bạn ơi
+    - không nhé babi
+    - Đéo
+- intent: mood_great
+  examples: |
+    - tuyệt vời
+    - tuyệt vời quá
+    - cảm thấy tuyệt vời
+    - tôi cảm thấy rất tốt
+    - Ambatokum
+    - Bắn rồi
+- intent: mood_unhappy
+  examples: |
+    - tồi tệ
+    - tôi buồn
+    - tôi không cảm thấy khỏe
+    - tôi thất vọng
+    - qua buon
+    - het cuu
+    - chịu chết
+- intent: bot_challenge
+  examples: |
+    - bạn có phải là bot không?
+    - bạn có phải là người không?
+    - tôi có đang nói chuyện với bot không?
+    - tôi có đang nói chuyện với người không?
+    - [y](product_detail)
+- intent: buy_a_phone
+  examples: |
+    - Tôi muốn mua điện thoại trong tầm [giá] 200$:{"entity":product_detail}
+    - Tôi muốn biết [màu sắc](product_detail) của [Samsung Galaxy A23](product_model)
+    - [Chi phí](product_detail) cho phiên bản [128GB](product_detail) của [Samsung Galaxy A23](product_model): là bao nhiêu?
+    - Tôi muốn chọn sản phẩm có hệ điều hành là [android](product_detail)
+    - Điện thoại [Samsung Galaxy A23](product_model) có [giá](product_detail) bao nhiêu?
+    - Tôi muốn mua điện thoại trong tầm [giá 200](product_model)$
+- intent: inform
+  examples: |
+    - [RAM](product_detail) của [Samsung Galaxy A23](product_model) là bao nhiêu?
+    - [Thời lượng pin](product_detail) của [Samsung Galaxy A23](product_model)
+    - [Chi phí](product_detail) cho phiên bản [128GB](product_detail) của [Samsung Galaxy A23](product_model): là bao nhiêu?
+    - [Google Pixel](product_model) có [cấu hình](product_detail) như thế nào?
+    - [Kích thước màn hình](product_detail) của [Oneplus Nord N30](product_model) là bao nhiêu ?
+    - [Dung lượng lưu trữ](product_detail) của [Iphone SE 2020](product_model) là bao nhiêu ?

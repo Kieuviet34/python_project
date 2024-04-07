@@ -30,18 +30,50 @@ stories:
       - action: utter_cheer_up
       - intent: deny
       - action: utter_goodbye
-  - story: active form
-    steps:
-      - intent: product_inquiry
-      - action: product_form
-      - active_loop: product_form
-      - slot_was_set: 
-        - requested_slot: product_name
-      - slot_was_set:
-        - requested_slot: pro_details
-      - action: utter_product_info
   # User asks if you are a bot
   - story: bot_challenge
     steps:
       - intent: bot_challenge
       - action: utter_iamabot
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: buy_a_phone
+    - action: product_form
+    - slot_was_set:
+      - requested_slot: product_name
+    - slot_was_set:
+      - product_name: SAMSUNG Galaxy S24 Ultra
+    - slot_was_set:
+      - requested_slot: product_details
+    - slot_was_set:
+      - product_details: RAM 12 GB
+    - slot_was_set: 
+      - requested_slot: null
+    - action: utter_product_info
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: inform
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_what_can_i_do
+  - action: action_default_fallback
+  - intent: buy_a_phone
+    entities:
+    - product_model: giá 200
+  - slot_was_set:
+    - product_name: giá 200
+  - action: product_form
+  - action: utter_product_info
+  - intent: inform
+    entities:
+    - product_detail: y
+  - intent: bot_challenge
+    entities:
+    - product_detail: y
+  - action: utter_iamabot

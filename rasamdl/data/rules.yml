@@ -1,0 +1,21 @@
+rules:
+
+- rule: Say goodbye to user
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: active form
+  steps:
+  - intent: buy_a_phone
+  - action: product_form
+  - active_loop: product_form
+- rule: confirm form
+  condition:
+  - active_loop: product_form
+  steps:
+  - action: product_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_product_info

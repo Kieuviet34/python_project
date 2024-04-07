@@ -8,76 +8,59 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
-
-from rasa_sdk import Action, Tracker
+from rasa_sdk.events import EventType
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
-import json
+from rasa_sdk.types import DomainDict
+import json,re
 
-class ActionHelloWorld(Action):
-
-    def name(self) -> Text:
-        return "action_hello_world"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(text="Hello World!")
-
-        return []
-class ActionProvideProductDetails(Action):
-    def name(self) -> Text:
-        return "action_provide_product_details"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, any]) -> List[Dict[Text, any]]:
-        try:
-            # 1. Extract product name from user question (assuming Rasa NLU processing)
-            product_name = tracker.get_slot("product_name")
-
-            # 2. Search for product data in JSON file
-            product_data = self.load_product_data()
-            matched_product = None
-            for data in product_data:
-                if product_name == data.get("title"):
-                    matched_product = data
-                    break
-
-            # 3. Check if product found
-            if matched_product:
-                title = matched_product.get("title", "Unknown")
-                price = matched_product.get("price", "Unknown")
-                description = matched_product.get("description", "No description available")
-
-                # 4. Optionally filter or prioritize details
-                relevant_details = {
-                    # Select specific details based on user intent or preferences
-                    "RAM": matched_product.get("product_details", {}).get("RAM"),
-                    "Battery Power Rating": matched_product.get("product_details", {}).get("Batteries"),
-                    "Screen size": matched_product.get("product_details",{}).get("Standing screen display size"),
-                    "Memory capacity": matched_product.get("product_details",{}).get("Memory Storage Capacity"),
-                    "OS" : matched_product.get("product_details",{}).get("OS")
-                }
-
-                response = f'Đây là thông tin của sản phẩm {title}:\n'
-                response += f'Giá: {price}\n'
-                response += f'Mô tả: {description}\n'
-                if relevant_details:
-                    response += 'Thông tin chi tiết:\n'
-                    for k, v in relevant_details.items():
-                        response += f'- {k}: {v}\n'
-
-                dispatcher.utter_message(response)
-            else:
-                dispatcher.utter_message("Xin lỗi, tôi không tìm thấy thông tin về sản phẩm '{}'".format(product_name))
-
-            return []
-
-        except FileNotFoundError:
-            dispatcher.utter_message("Xin lỗi tôi không thể tìm thông tin sản phẩm, vui lòng thử lại sau")
-        except json.JSONDecodeError:
-            dispatcher.utter_message("Đã xảy ra lỗi trong khâu xử lý thông tin sản phẩm, vui lòng liên hệ hỗ trợ")
-    def load_product_data(self)->Dict[Text,any]:
-        with open('\\data_scaping\\phone.json', 'r') as f:
-            product_data = json.load(f)
+class ValidateProductForm(FormValidationAction):
+    def __init__(self):
+        self.PRODUCT_NAME = None
+        self.PRODUCT_PRICE = None
+        self.PRODUCT_DETAILS = {}
+    def get_product_info(self):
+        with open("\\data_scaping\\phone.json","r+") as f:
+            data = json.load(f)
+        title = data.get('title','')
+        product_name = title.split(',')[0].split('|')[0].split('/')[0].split('\\')[0].strip() #reshape name
+        self.PRODUCT_NAME = product_name
+        self.PRODUCT_PRICE = data.get('price', None)
         
-        return product_data
+        self.PRODUCT_DETAILS = data.get("product_details",{})
+        
+    def name(self) ->Text:
+        return "validate_product_form"
+    
+    def validate_product_name(
+        self, 
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict
+    ) -> Dict[Text, Any]:
+        if self.PRODUCT_NAME and slot_value.lower() not in self.PRODUCT_NAME.lower():
+            dispatcher.utter_message(text=f"tên sản phẩm không hợp lệ, sản phẩm của chúng tôi chỉ có {'/'.join(self.PRODUCT_NAME)}")
+            return {"product_name": None} 
+        if not slot_value:
+            dispatcher.utter_message(
+                text=f"Tôi không nhận ra tên sản phẩm, Data của chúng tôi chỉ có {'/'.join(self.PRODUCT_NAME)}"
+            )
+            return {"product_name": None}
+        dispatcher.utter_message(text=f"OK! bạn muốn sản phẩm {slot_value}.")
+        return {"product_name": slot_value}
+    def validate_product_info(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict
+    ) -> Dict[Text, Any]:
+        if not slot_value:
+            dispatcher.utter_message('Thông tin chi tiết không hợp lệ')
+            return {'product_details':None}
+        if slot_value not in self.PRODUCT_DETAILS:
+            dispatcher.utter_message(text=f"Không tìm thấy thông tin chi tiết này.")
+            return {"product_detail": None}
+        dispatcher.utter_message(text=f"OK! Thông tin chi tiết bạn muốn là: {self.PRODUCT_DETAILS[slot_value]}.")
+        return {"product_detail": slot_value}     

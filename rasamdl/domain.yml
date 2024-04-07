@@ -1,60 +1,68 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - product_inquiry
-
+- affirm
+- bot_challenge
+- buy_a_phone
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- product_inquiry
 entities:
 - product_model
 - product_detail
-
+- product_details
 slots:
   product_name:
     type: text
-    mappings: 
-    - type: from_entity
-      entity: product_model
-  pro_details: 
-    type: list
+    influence_conversation: true
     mappings:
     - type: from_entity
-      entity: product_detail
+      entity: product_model
+  product_details:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_details
 forms:
   product_form:
-      required_slots:
-        - product_name
-        - pro_details
+    required_slots:
+    - product_name
+    - product_details
 responses:
   utter_greet:
-  - text: "Chào bạn! Có gì tôi có thể giúp bạn không?"
-
+  - text: Chào bạn! Có gì tôi có thể giúp bạn không?
   utter_cheer_up:
-  - text: "Đừng buồn! Hãy thử xem đây:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Đừng buồn! Hãy thử xem đây:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_happy:
-  - text: "Rất vui vì bạn đang vui!"
-
+  - text: Rất vui vì bạn đang vui!
   utter_goodbye:
-  - text: "Hẹn gặp lại bạn!"
-
+  - text: Hẹn gặp lại bạn!
   utter_iamabot:
-  - text: "shut da fuck up u stupid bitch."
-
+  - text: shut da fuck up u stupid bitch.
   utter_what_can_i_do:
-  - text: "Bạn muốn tôi làm gì cho bạn?"
-
+  - text: Bạn muốn tôi làm gì cho bạn?
   utter_sorry:
-  - text: "Xin lỗi, tôi không hiểu. Bạn có thể diễn đạt lại không?"
+  - text: Xin lỗi, tôi không hiểu. Bạn có thể diễn đạt lại không?
   utter_product_info:
-  - text: "Dưới đây là thông tin về {pro_details} của điện thoại {product_name}"
+  - text: Dưới đây là thông tin về {product_details} của điện thoại {product_name}
+  utter_ask_prod_name:
+  - text: Bạn muốn mua điện thoại của hãng nào ?
+  utter_ask_prod_detail:
+  - text: Bạn muốn thông số cụ thể ra sao ?
+  utter_ask_price:
+  - text: Bạn muốn mua trong tầm giá bao nhiêu ?
+actions:
+- utter_product_info
+- utter_what_can_i_do
+- utter_greet
+- utter_iamabot
+- utter_happpy
+- utter_goodbye
+- validate_product_form
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-

@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-product_detail",
+      "2": "I-product_detail",
+      "3": "L-product_detail",
+      "4": "U-product_detail",
+      "5": "B-product_model",
+      "6": "I-product_model",
+      "7": "L-product_model",
+      "8": "U-product_model",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-product_detail": 1,
+      "I-product_detail": 2,
+      "L-product_detail": 3,
+      "U-product_detail": 4,
+      "B-product_model": 5,
+      "I-product_model": 6,
+      "L-product_model": 7,
+      "U-product_model": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]
