@@ -60,9 +60,8 @@ nlu:
     - [y](product_detail)
 - intent: buy_a_phone
   examples: |
-    - Tôi muốn mua điện thoại trong tầm [giá] 200$:{"entity":product_detail}
+    - Tôi muốn mua điện thoại trong tầm [giá](product_detail) 200$
     - Tôi muốn biết [màu sắc](product_detail) của [Samsung Galaxy A23](product_model)
-    - [Chi phí](product_detail) cho phiên bản [128GB](product_detail) của [Samsung Galaxy A23](product_model): là bao nhiêu?
     - Tôi muốn chọn sản phẩm có hệ điều hành là [android](product_detail)
     - Điện thoại [Samsung Galaxy A23](product_model) có [giá](product_detail) bao nhiêu?
     - Tôi muốn mua điện thoại trong tầm [giá 200](product_model)$

@@ -20,7 +20,7 @@ class ValidateProductForm(FormValidationAction):
         self.PRODUCT_PRICE = None
         self.PRODUCT_DETAILS = {}
     def get_product_info(self):
-        with open("\\data_scaping\\phone.json","r+") as f:
+        with open("C:\\Users\Admin\\python_project\\data_scaping\\phone.json","r") as f:
             data = json.load(f)
         title = data.get('title','')
         product_name = title.split(',')[0].split('|')[0].split('/')[0].split('\\')[0].strip() #reshape name
